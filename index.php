@@ -1,5 +1,5 @@
 <?php
-include 'db.php'; // Include database connection
+include 'db.php'; // Include the database connection
 
 // Fetch all records from the users table
 $query = "SELECT * FROM users";
@@ -17,7 +17,10 @@ $result = mysqli_query($conn, $query);
 <body>
     <div class="container">
         <h1>User Management</h1>
+        <!-- Add New User Button -->
         <a href="create.php" class="btn">Add New User</a>
+
+        <!-- User Data Table -->
         <table>
             <thead>
                 <tr>
@@ -32,23 +35,29 @@ $result = mysqli_query($conn, $query);
                 </tr>
             </thead>
             <tbody>
-                <?php while ($row = mysqli_fetch_assoc($result)): ?>
+                <?php if (mysqli_num_rows($result) > 0): ?>
+                    <?php while ($row = mysqli_fetch_assoc($result)): ?>
+                        <tr>
+                            <td><?php echo $row['id']; ?></td>
+                            <td><?php echo $row['firstname']; ?></td>
+                            <td><?php echo $row['middlename']; ?></td>
+                            <td><?php echo $row['lastname']; ?></td>
+                            <td><?php echo $row['age']; ?></td>
+                            <td><?php echo $row['address']; ?></td>
+                            <td><?php echo $row['course_section']; ?></td>
+                            <td>
+                                <!-- Edit Button -->
+                                <a href="edit.php?id=<?php echo $row['id']; ?>" class="btn">Edit</a>
+                                <!-- Delete Button -->
+                                <a href="delete.php?id=<?php echo $row['id']; ?>" class="btn delete">Delete</a>
+                            </td>
+                        </tr>
+                    <?php endwhile; ?>
+                <?php else: ?>
                     <tr>
-                        <td><?php echo $row['id']; ?></td>
-                        <td><?php echo $row['firstname']; ?></td>
-                        <td><?php echo $row['middlename']; ?></td>
-                        <td><?php echo $row['lastname']; ?></td>
-                        <td><?php echo $row['age']; ?></td>
-                        <td><?php echo $row['address']; ?></td>
-                        <td><?php echo $row['course_section']; ?></td>
-                        <td>
-                            <!-- Edit Button -->
-                            <a href="edit.php?id=<?php echo $row['id']; ?>" class="btn">Edit</a>
-                            <!-- Delete Button -->
-                            <a href="delete.php?id=<?php echo $row['id']; ?>" class="btn delete">Delete</a>
-                        </td>
+                        <td colspan="8">No records found</td>
                     </tr>
-                <?php endwhile; ?>
+                <?php endif; ?>
             </tbody>
         </table>
     </div>
