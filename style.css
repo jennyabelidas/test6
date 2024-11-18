@@ -1,0 +1,176 @@
+/* General Reset */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffebee; /* Lightest red for background */
+    color: #880e4f; /* Deep red for text */
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    margin: 2rem auto;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+h1 {
+    color: #b71c1c; /* Bold crimson for headers */
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+a.btn, button.btn {
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    margin: 0.5rem;
+    background-color: #c62828; /* Medium red for buttons */
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+a.btn:hover, button.btn:hover {
+    background-color: #b71c1c; /* Deep red hover */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+a.btn.delete {
+    background-color: #e57373; /* Lighter red for delete */
+}
+
+a.btn.delete:hover {
+    background-color: #d32f2f;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background-color: #ffffff; /* White for contrast */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: scaleIn 1.2s ease;
+}
+
+table th, table td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #ffcdd2; /* Subtle red border */
+    transition: all 0.2s ease-in-out;
+}
+
+table th {
+    background-color: #c62828; /* Medium red for headers */
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+table td {
+    color: #5d4037; /* Brownish tone for readability */
+    font-size: 0.9rem;
+}
+
+table tr:nth-child(even) {
+    background-color: #ffcdd2; /* Pale red for alternate rows */
+}
+
+table tr:hover {
+    background-color: #ffe5e7; /* Softer red on hover */
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+table th:hover, table td:hover {
+    background-color: #f8d7da; /* Highlight effect */
+    color: #b71c1c;
+    font-weight: bold;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Enhanced Borders for Table */
+table, th, td {
+    border: 2px solid #c62828; /* Bold red border for emphasis */
+}
+
+/* Form Styling */
+form input, form textarea {
+    width: 80%;
+    margin: 0.5rem 0;
+    padding: 0.7rem;
+    border: 1px solid #ef9a9a; /* Subtle red border */
+    border-radius: 25px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: #c62828;
+    box-shadow: 0 0 5px rgba(198, 40, 40, 0.5);
+}
+
+form button {
+    width: 50%;
+    background-color: #c62828;
+    color: white;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+form button:hover {
+    background-color: #b71c1c;
+    transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Enhanced Header and Footer Styling */
+header, footer {
+    background-color: #d32f2f; /* Dominant red for header/footer */
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    margin-top: 2rem;
+}
