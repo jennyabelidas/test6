@@ -49,7 +49,7 @@ $result = mysqli_query($conn, $query);
                                 <!-- Edit Button -->
                                 <a href="edit.php?id=<?php echo $row['id']; ?>" class="btn">Edit</a>
                                 <!-- Delete Button -->
-                                <a href="delete.php?id=<?php echo $row['id']; ?>" class="btn delete">Delete</a>
+                                <a href="delete.php?id=<?php echo $row['id']; ?>" class="btn delete" onclick="return confirm('Are you sure you want to delete this record?');">Delete</a>
                             </td>
                         </tr>
                     <?php endwhile; ?>
