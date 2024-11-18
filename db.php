@@ -1,12 +1,15 @@
 <?php
-$servername = "localhost";
-$username = "jenny"; // Change if needed
-$password = "jenny";     // Change if needed
-$dbname = "students";
+// Database credentials
+$hostname = "localhost"; // Replace with your database host
+$username = "jenny";      // Replace with your database username
+$password = "jenny";          // Replace with your database password
+$database = "students";  // Replace with your database name
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+// Create a connection
+$conn = mysqli_connect($hostname, $username, $password, $database);
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
 ?>
